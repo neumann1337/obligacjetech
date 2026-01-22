@@ -1,0 +1,15 @@
+# Mac
+.DS_Store
+
+# Node / frontend
+node_modules
+dist
+build
+
+# Python / backend
+__pycache__/
+*.pyc
+.env
+
+# VS Code
+.vscode/
