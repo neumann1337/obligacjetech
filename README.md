@@ -1,5 +1,7 @@
 Obligacje.tech – Polish Treasury Bonds Calculator
 
+![](images/Screenshot%202026-01-22%20at%2018.32.43.png)
+
 A full-stack web application designed to simulate and analyze profits from Polish Treasury Bonds (OTS, DOS, TOZ, COI, EDO). The tool provides precise net profit calculations, accounting for compound interest (capitalization), capital gains tax (Belka tax), and inflation indexing.
 
 (Insert screenshot here)
@@ -90,6 +92,6 @@ Complex financial calculation logic
 
 Frontend data visualization techniques
 
-Author
+# Author
 
 Bartłomiej Neumann
