@@ -1,12 +1,10 @@
-Obligacje.tech – Polish Treasury Bonds Calculator
+### Obligacje.tech – Polish Treasury Bonds Calculator
 
-![](images/Screenshot%202026-01-22%20at%2018.32.43.png)
+![](Images/1.png)
 
 A full-stack web application designed to simulate and analyze profits from Polish Treasury Bonds (OTS, DOS, TOZ, COI, EDO). The tool provides precise net profit calculations, accounting for compound interest (capitalization), capital gains tax (Belka tax), and inflation indexing.
 
-(Insert screenshot here)
-
-Key Features
+# Key Features
 
 Advanced Profit Calculator: Simulates daily, monthly, and yearly returns using compound interest logic.
 
@@ -18,7 +16,7 @@ Educational Hub: Interactive knowledge base regarding bond types and investment 
 
 Security: Backend implementation of rate limiting (Bucket4j) and strict input validation.
 
-Tech Stack
+# Tech Stack
 
 Frontend
 
@@ -44,7 +42,7 @@ Spring Validation
 
 JSON-based storage
 
-How to Run Locally
+# How to Run Locally
 
 Prerequisites: Node.js 18+, JDK 17+, Maven.
 
@@ -59,7 +57,7 @@ The server will start on port 8080.
 
 cd frontend
 
-# Create local environment file
+Create local environment file
 
 echo "NEXT_PUBLIC_BACKEND_URL=http://localhost:8080/api" > .env.local
 
@@ -68,7 +66,7 @@ npm run dev
 
 The application will be available at http://localhost:3000.
 
-Security & Architecture
+# Security & Architecture
 
 The project follows a REST API architecture with separation of concerns.
 
@@ -80,7 +78,7 @@ Rate Limiting: Protects calculation endpoints from abuse using a token-bucket al
 
 Error Handling: Unified JSON error responses provided to the frontend.
 
-Purpose
+# Purpose
 
 This project was created as a portfolio and educational full-stack application to demonstrate:
 
