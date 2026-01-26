@@ -1,7 +1,11 @@
-[00:00:00.886] Server  LOG     ✓ Ready in 685ms
-[00:00:34.012] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:08.448] Browser WARN    'oklab(0.999994 0.0000455678 0.0000200868)' is not an animatable color. Use the equivalent color code instead.. For more information and steps for solving, visit https://motion.dev/troubleshooting/color-not-animatable
-[00:01:10.116] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:34.765] Browser WARN    'oklab(0.999994 0.0000455678 0.0000200868)' is not an animatable color. Use the equivalent color code instead.. For more information and steps for solving, visit https://motion.dev/troubleshooting/color-not-animatable
-[00:02:35.474] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:55.846] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:01.465] Server  LOG     ✓ Ready in 1262ms
+[00:00:04.808] Browser ERROR   {}
+[00:00:06.254] Browser WARN    'oklab(1 0 0)' is not an animatable color. Use the equivalent color code instead.. For more information and steps for solving, visit https://motion.dev/troubleshooting/color-not-animatable
+[00:00:07.008] Browser WARN    'oklab(1 0 0)' is not an animatable color. Use the equivalent color code instead.. For more information and steps for solving, visit https://motion.dev/troubleshooting/color-not-animatable
+[00:00:07.364] Browser ERROR   {}
+[00:00:08.446] Browser ERROR   {}
+[00:00:11.340] Browser WARN    'oklab(1 0 0)' is not an animatable color. Use the equivalent color code instead.. For more information and steps for solving, visit https://motion.dev/troubleshooting/color-not-animatable
+[00:00:11.940] Browser WARN    'oklab(1 0 0)' is not an animatable color. Use the equivalent color code instead.. For more information and steps for solving, visit https://motion.dev/troubleshooting/color-not-animatable
+[00:00:12.675] Browser ERROR   Błąd połączenia z backendem: {}
+[00:00:14.274] Browser ERROR   Błąd połączenia z backendem: {}
+[00:00:18.449] Browser WARN    'oklab(1 0 0)' is not an animatable color. Use the equivalent color code instead.. For more information and steps for solving, visit https://motion.dev/troubleshooting/color-not-animatable

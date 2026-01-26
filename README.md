@@ -8,11 +8,21 @@ A full-stack web application designed to simulate and analyze profits from Polis
 
 Advanced Profit Calculator: Simulates daily, monthly, and yearly returns using compound interest logic.
 
+![](Images/3.png)
+
 Data Visualization: Custom SVG charts implementation (Linear Growth & ROI Pie Chart) without external chart libraries.
+
+![](Images/4.png)
+![](Images/5.png)
 
 Market Data Integration: Real-time data integration with NBP API (FX rates, gold prices).
 
+![](Images/9.png)
+
 Educational Hub: Interactive knowledge base regarding bond types and investment strategies.
+
+![](Images/6.png)
+![](Images/7.png)
 
 Security: Backend implementation of rate limiting (Bucket4j) and strict input validation.
 
