@@ -1,7 +1,0 @@
-{
-  "/kalkulator/page": "app/kalkulator/page.js",
-  "/obligacje/page": "app/obligacje/page.js",
-  "/page": "app/page.js",
-  "/poradnik/page": "app/poradnik/page.js",
-  "/wiadomosci/page": "app/wiadomosci/page.js"
-}

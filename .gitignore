@@ -1,17 +1,23 @@
-# Mac
+# System files
 .DS_Store
-out/
-build/
-.DS_Store
-# Node / frontend
-node_modules
-dist
-build
+Thumbs.db
 
-# Python / backend
-__pycache__/
-*.pyc
-.env
+# Frontend (Next.js)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.env.local
+frontend/.env.production
 
-# VS Code
+# Backend (Java Spring Boot)
+backend/target/
+backend/.mvn/
+backend/*.jar
+backend/*.war
+
+# IDE
 .vscode/
+.idea/
+*.swp
+*.iml
