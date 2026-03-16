@@ -30,7 +30,7 @@ Security: Backend implementation of rate limiting (Bucket4j) and strict input va
 
 Frontend
 
-Next.js 14 (App Router)
+Next.js 16.1.2 (App Router)
 
 TypeScript
 

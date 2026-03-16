@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect } from 'react';
 import { TrendingUp, Clock, ShieldCheck, ArrowRight, AlertCircle, RefreshCw, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -29,6 +30,7 @@ const transformBondData = (raw: RawBondFromApi): BondDisplay => {
     let color = "from-gray-500 to-gray-700";
     let desc = "";
     let features: string[] = [];
+    
     const interestStr = `${oprocentowaniePierwszyRok.toFixed(2).replace('.', ',')}%`;
 
     let durationStr = okresLata === 0 ? "3 miesiące" : `${okresLata} lat`;
@@ -95,7 +97,7 @@ const transformBondData = (raw: RawBondFromApi): BondDisplay => {
     };
 };
 
-export default function OfertaPage() {
+export default function BondDetails() {
     const [bondsToDisplay, setBondsToDisplay] = useState<BondDisplay[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -158,64 +160,58 @@ export default function OfertaPage() {
     return (
         <div className="min-h-screen bg-[#fafafa] font-sans text-gray-900 pb-20">
         
-        <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 px-6 py-4 flex justify-center">
-            <div className="w-full max-w-5xl flex justify-between items-center">
-            <a href="#" className="flex items-center gap-2 text-gray-900 font-semibold no-underline" onClick={(e) => e.preventDefault()}>
-                <TrendingUp size={20} className="text-blue-600" />
-                <span>Obligacje.tech</span>
-            </a>
-            <span className="text-xs font-medium px-3 py-1 bg-green-100 text-green-700 rounded-full flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                Dane z API Live
-            </span>
-            </div>
-        </nav>
-
-        <main className="max-w-7xl mx-auto px-6 pt-16">
-            
-            <header className="text-center max-w-3xl mx-auto mb-20">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-gray-900">
-                Aktualna Oferta <br /> Skarbu Państwa
-            </h1>
-            <p className="text-lg text-gray-500 leading-relaxed">
-                Poniższe dane pobierane są z API.
-                Wybierz instrument dopasowany do Twoich celów.
-            </p>
-            </header>
-
-            <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 mb-24">
-            {bondsToDisplay.map((bond) => (
-                <BondCard key={bond.symbol} bond={bond} />
-            ))}
-            </section>
-
-            <section className="max-w-3xl mx-auto bg-white rounded-[32px] p-8 md:p-12 shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100">
-            <div className="flex items-center gap-3 mb-8">
-                <div className="p-3 bg-blue-100 rounded-xl text-blue-600">
-                <ShieldCheck size={24} />
+            <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-100 px-6 py-4 flex justify-center">
+                <div className="w-full max-w-5xl flex justify-between items-center">
+                <a href="#" className="flex items-center gap-2 text-gray-900 font-semibold no-underline" onClick={(e) => e.preventDefault()}>
+                    <TrendingUp size={20} className="text-blue-600" />
+                    <span>Obligacje.tech</span>
+                </a>
+                <span className="text-xs font-medium px-3 py-1 bg-green-100 text-green-700 rounded-full flex items-center gap-2">
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    Dane z API Live
+                </span>
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900">Warto wiedzieć</h2>
-            </div>
+            </nav>
 
-            <div className="space-y-1">
-                <FaqItem 
-                question="Skąd pochodzą te dane?" 
-                answer="Dane są pobierane w czasie rzeczywistym z API." 
-                />
-                <FaqItem 
-                question="Czy oprocentowanie jest stałe?" 
-                answer="Dla obligacji OTS i DOS - tak. Dla pozostałych (TOZ, COI, EDO) podane oprocentowanie dotyczy tylko pierwszego okresu odsetkowego." 
-                />
-            </div>
-            </section>
-        </main>
+            <main className="max-w-7xl mx-auto px-6 pt-16">
+                
+                <header className="text-center max-w-3xl mx-auto mb-20">
+                <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-gray-900">
+                    Aktualna Oferta <br /> Skarbu Państwa
+                </h1>
+                <p className="text-lg text-gray-500 leading-relaxed">
+                    Poniższe dane pobierane są z API.
+                    Wybierz instrument dopasowany do Twoich celów.
+                </p>
+                </header>
+
+                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 mb-24">
+                {bondsToDisplay.map((bond) => (
+                    <BondCard key={bond.symbol} bond={bond} />
+                ))}
+                </section>
+
+                <section className="max-w-3xl mx-auto bg-white rounded-[32px] p-8 md:p-12 shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-gray-100">
+                <div className="flex items-center gap-3 mb-8">
+                    <div className="p-3 bg-blue-100 rounded-xl text-blue-600">
+                    <ShieldCheck size={24} />
+                    </div>
+                    <h2 className="text-2xl font-bold text-gray-900">Warto wiedzieć</h2>
+                </div>
+
+                <div className="space-y-1">
+                    <FaqItem 
+                    question="Skąd pochodzą te dane?" 
+                    answer="Dane są pobierane w czasie rzeczywistym z API." 
+                    />
+                    <FaqItem 
+                    question="Czy oprocentowanie jest stałe?" 
+                    answer="Dla obligacji OTS i DOS - tak. Dla pozostałych (TOZ, COI, EDO) podane oprocentowanie dotyczy tylko pierwszego okresu odsetkowego." 
+                    />
+                </div>
+                </section>
+            </main>
         
-        <style>{`
-            @keyframes fadeIn {
-                from { opacity: 0; transform: translateY(10px); }
-                to { opacity: 1; transform: translateY(0); }
-            }
-        `}</style>
         </div>
     );
 }
