@@ -1,4 +1,4 @@
-import BondDetails from '@/components/bonds/BondCard'; // dostosuj ścieżkę importu
+import BondDetails from '@/components/bonds/BondCard';
 
 export default function OfertaPage() {
   return (

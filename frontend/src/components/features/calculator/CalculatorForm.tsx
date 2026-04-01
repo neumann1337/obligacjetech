@@ -2,28 +2,28 @@
 
 import React from 'react';
 import { Wallet, PieChart, Percent, Calendar, Loader2, AlertCircle } from 'lucide-react';
-import { Obligacja } from '@/types/calculator';
+import { Bond } from '@/types/calculator';
 
 interface CalculatorFormProps {
-  kwota: number | '';
-  setKwota: (v: number | '') => void;
-  wybranySymbol: string;
-  setWybranySymbol: (s: string) => void;
-  listaObligacji: Obligacja[];
-  wybranaObligacjaInfo?: Obligacja;
+  amount: number | '';
+  setAmount: (v: number | '') => void;
+  selectedSymbol: string;
+  setSelectedSymbol: (s: string) => void;
+  bondsList: Bond[];
+  selectedBondInfo?: Bond;
   loading: boolean;
-  loadingObligacje: boolean;
+  loadingBonds: boolean;
   error: string | null;
-  handleOblicz: (e: React.FormEvent) => void;
+  handleCalculate: (e: React.FormEvent) => void;
 }
 
 export const CalculatorForm = ({
-  kwota, setKwota, wybranySymbol, setWybranySymbol,
-  listaObligacji, wybranaObligacjaInfo, loading,
-  loadingObligacje, error, handleOblicz
+  amount, setAmount, selectedSymbol, setSelectedSymbol,
+  bondsList, selectedBondInfo, loading,
+  loadingBonds, error, handleCalculate
 }: CalculatorFormProps) => {
 
-  if (loadingObligacje) {
+  if (loadingBonds) {
     return (
       <div className="p-10 text-center text-[#86868b] flex flex-col items-center">
         <Loader2 className="animate-spin mb-3 text-[#0071E3]" />
@@ -33,7 +33,7 @@ export const CalculatorForm = ({
   }
 
   return (
-    <form onSubmit={handleOblicz}>
+    <form onSubmit={handleCalculate}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-3 ml-1">Kwota inwestycji (PLN)</label>
@@ -41,8 +41,8 @@ export const CalculatorForm = ({
             <Wallet size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#86868b] group-focus-within:text-[#0071E3] transition-colors" />
             <input
               type="number"
-              value={kwota}
-              onChange={(e) => setKwota(e.target.value === '' ? '' : Number(e.target.value))}
+              value={amount}
+              onChange={(e) => setAmount(e.target.value === '' ? '' : Number(e.target.value))}
               placeholder="1000"
               className="w-full bg-[#F5F5F7] rounded-2xl py-4 pl-12 pr-4 text-lg font-semibold outline-none focus:ring-4 focus:ring-[#0071E3]/10 transition-all placeholder:text-gray-400"
             />
@@ -54,11 +54,11 @@ export const CalculatorForm = ({
           <div className="relative group">
             <PieChart size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-[#86868b] group-focus-within:text-[#0071E3] transition-colors" />
             <select
-              value={wybranySymbol}
-              onChange={(e) => setWybranySymbol(e.target.value)}
+              value={selectedSymbol}
+              onChange={(e) => setSelectedSymbol(e.target.value)}
               className="w-full bg-[#F5F5F7] rounded-2xl py-4 pl-12 pr-4 text-lg font-semibold outline-none appearance-none cursor-pointer focus:ring-4 focus:ring-[#0071E3]/10 transition-all"
             >
-              {listaObligacji.map(o => (
+              {bondsList.map(o => (
                 <option key={o.symbol} value={o.symbol}>{o.symbol}</option>
               ))}
             </select>
@@ -66,19 +66,19 @@ export const CalculatorForm = ({
         </div>
       </div>
 
-      {wybranaObligacjaInfo && (
+      {selectedBondInfo && (
         <div className="mt-6 p-5 rounded-2xl bg-[#F5F5F7] flex flex-wrap gap-5 justify-between items-center text-sm border border-gray-100">
           <div className="flex items-center gap-2">
             <Percent size={18} className="text-[#0071E3]" />
-            <span>Oprocentowanie: <strong className="text-gray-900">{wybranaObligacjaInfo.oprocentowaniePierwszyRok}%</strong></span>
+            <span>Oprocentowanie: <strong className="text-gray-900">{selectedBondInfo.firstYearInterestRate}%</strong></span>
           </div>
           <div className="flex items-center gap-2">
               <Calendar size={18} className="text-[#0071E3]" />
               <span> Zapadalność: <strong className="text-gray-900">
-                    {wybranaObligacjaInfo.okresLata === 0 ? "3 miesiące" : wybranaObligacjaInfo.okresLata === 1
-                      ? "1 rok" : wybranaObligacjaInfo.okresLata <= 4
-                        ? `${wybranaObligacjaInfo.okresLata} lata`
-                          : `${wybranaObligacjaInfo.okresLata} lat`}
+                    {selectedBondInfo.periodYears === 0 ? "3 miesiące" : selectedBondInfo.periodYears === 1
+                      ? "1 rok" : selectedBondInfo.periodYears <= 4
+                        ? `${selectedBondInfo.periodYears} lata`
+                          : `${selectedBondInfo.periodYears} lat`}
               </strong></span>
           </div>
         </div>

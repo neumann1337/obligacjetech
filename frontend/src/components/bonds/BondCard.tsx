@@ -1,13 +1,17 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { TrendingUp, Clock, ShieldCheck, ArrowRight, AlertCircle, RefreshCw, ChevronDown, ChevronUp } from 'lucide-react';
+import { TrendingUp, Clock, ShieldCheck, AlertCircle, RefreshCw, ChevronDown, ChevronUp } from 'lucide-react';
+import { PieChart } from 'lucide-react';
 
+// 1. ZAKTUALIZOWANY INTERFEJS (zgodny z Bonds.json)
 interface RawBondFromApi {
     symbol: string;
-    oprocentowaniePierwszyRok: number;
-    okresLata: number;
-    kapitalizacja: boolean;
+    name: string;
+    firstYearInterestRate: number;
+    inflationMargin: number | null;
+    capitalization: boolean;
+    periodYears: number;
 }
 
 interface BondDisplay {
@@ -21,67 +25,65 @@ interface BondDisplay {
     features: string[];
 }
 
+// 2. ZAKTUALIZOWANA FUNKCJA MAPUJĄCA
 const transformBondData = (raw: RawBondFromApi): BondDisplay => {
-    const { symbol, oprocentowaniePierwszyRok, kapitalizacja, okresLata } = raw;
+    // Używamy nowych, angielskich kluczy z Twojego JSON-a
+    const { symbol, name: apiName, firstYearInterestRate, periodYears } = raw;
     const prefix = symbol.substring(0, 3);
 
-    let name = "Obligacja Skarbowa";
+    let name = apiName || "Obligacja Skarbowa";
     let type = "";
     let color = "from-gray-500 to-gray-700";
     let desc = "";
     let features: string[] = [];
     
-    const interestStr = `${oprocentowaniePierwszyRok.toFixed(2).replace('.', ',')}%`;
+    // Zabezpieczenie na wypadek, gdyby wartość z backendu była null/undefined
+    const rate = firstYearInterestRate || 0;
+    const interestStr = `${rate.toFixed(2).replace('.', ',')}%`;
 
-    let durationStr = okresLata === 0 ? "3 miesiące" : `${okresLata} lat`;
-    if (okresLata === 1) durationStr = "1 rok";
-    if (okresLata > 4) durationStr = `${okresLata} lat`;
+    let durationStr = periodYears === 0 ? "3 miesiące" : `${periodYears} lat`;
+    if (periodYears === 1) durationStr = "1 rok";
+    if (periodYears === 2 || periodYears === 3 || periodYears === 4) durationStr = `${periodYears} lata`;
+    if (periodYears >= 5) durationStr = `${periodYears} lat`;
 
     switch (prefix) {
         case "OTS":
-            name = "Oszczędnościowe Trzymiesięczne";
             type = "Stałe oprocentowanie";
             color = "from-blue-500 to-blue-700";
             desc = "Krótkoterminowa lokata kapitału. Oprocentowanie zbliżone do lokat.";
             features = ["Stały zysk", "Bardzo krótki termin", "Zysk wypłacany na koniec"];
             break;
         case "ROR":
-            name = "Roczne (ROR)";
             type = "Zmienne (Stopa Ref.)";
             color = "from-pink-500 to-rose-600";
             desc = "Oprocentowanie podąża za stopą referencyjną NBP.";
             features = ["Oprocentowanie wyższe niż na lokacie", "Aktualizacja co miesiąc", "Wypłata odsetek co miesiąc"];
             break;
         case "DOR":
-            name = "Dwuletnie Oszczędnościowe";
             type = "Stałe oprocentowanie";
             color = "from-emerald-500 to-emerald-700";
             desc = "Bezpieczna przystań na średni termin. Stała stopa zwrotu niezależnie od rynków.";
             features = ["Stałe oprocentowanie", "Chronią przed spadkiem stóp", "Kapitalizacja roczna"];
             break;
         case "TOS":
-            name = "Trzyletnie Oszczędnościowe";
             type = "Zmienne (WIBOR 6M)";
             color = "from-violet-500 to-violet-700";
             desc = "Oprocentowanie oparte o stawkę WIBOR. Zyski rosną, gdy rosną stopy procentowe.";
             features = ["Zmienne co 6 miesięcy", "Wypłata odsetek co pół roku", "Podążają za rynkiem"];
             break;
         case "COI":
-            name = "Czteroletnie Indeksowane";
             type = "Indeksowane inflacją";
             color = "from-orange-500 to-orange-700";
             desc = "Ubezpieczenie ponad inflację. W pierwszym roku stały zysk, potem: inflacja + marża.";
             features = ["Ochrona siły nabywczej", "Wypłata odsetek co roku", "Bezpieczne na 4 lata"];
             break;
         case "EDO":
-            name = "Emerytalne Dziesięcioletnie";
             type = "Indeksowane + Proc. Składany";
             color = "from-indigo-600 to-purple-600";
             desc = "Najpotężniejsze narzędzie długoterminowe. Odsetki są dopisywane do kapitału (procent składany).";
             features = ["Magia procentu składanego", "Najwyższa marża", "Wypłata na koniec"];
             break;
         default:
-            name = `Obligacja ${symbol}`;
             desc = "Obligacja skarbowa.";
     }
 

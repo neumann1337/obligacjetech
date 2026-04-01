@@ -5,11 +5,11 @@ import { TimelineItem } from '@/types/calculator';
 
 interface TimelineTableProps {
   timeline: TimelineItem[];
-  kwota: number | '';
+  amount: number | ''; 
   formatPLN: (v: number) => string;
 }
 
-export const TimelineTable = ({ timeline, kwota, formatPLN }: TimelineTableProps) => {
+export const TimelineTable = ({ timeline, amount, formatPLN }: TimelineTableProps) => {
   return (
     <div className="mt-8 mx-auto overflow-hidden bg-white rounded-[24px] shadow-[0_10px_40px_rgba(0,0,0,0.04)] border border-black/5">
       <div className="p-6 border-b border-gray-100">
@@ -28,7 +28,7 @@ export const TimelineTable = ({ timeline, kwota, formatPLN }: TimelineTableProps
               <tbody className="text-sm">
                   <tr className="border-b border-gray-100 last:border-0">
                       <td className="py-3 px-4 text-gray-500">Start</td>
-                      <td className="py-3 px-4 font-medium text-[#1D1D1F]">{formatPLN(Number(kwota))}</td>
+                      <td className="py-3 px-4 font-medium text-[#1D1D1F]">{formatPLN(Number(amount))}</td>
                       <td className="py-3 px-4 text-right text-gray-500">-</td>
                   </tr>
                   {timeline.map((item) => (

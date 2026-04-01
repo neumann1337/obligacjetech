@@ -1,4 +1,4 @@
-/Users/bartlomiejneumann/Documents/projects/web/obligacje/backend/src/main/java/com/neumann/example/obligacje_backend/model/Obligacja.java
-/Users/bartlomiejneumann/Documents/projects/web/obligacje/backend/src/main/java/com/neumann/example/obligacje_backend/controller/ObligacjeController.java
-/Users/bartlomiejneumann/Documents/projects/web/obligacje/backend/src/main/java/com/neumann/example/obligacje_backend/ObligacjeBackendApplication.java
-/Users/bartlomiejneumann/Documents/projects/web/obligacje/backend/src/main/java/com/neumann/example/obligacje_backend/service/ObligacjeService.java
+/Users/bartlomiejneumann/Documents/projects/web/obligacje/backend/src/main/java/com/neumann/example/obligacje_backend/controller/BondsController.java
+/Users/bartlomiejneumann/Documents/projects/web/obligacje/backend/src/main/java/com/neumann/example/obligacje_backend/BondsBackendApplication.java
+/Users/bartlomiejneumann/Documents/projects/web/obligacje/backend/src/main/java/com/neumann/example/obligacje_backend/model/Bond.java
+/Users/bartlomiejneumann/Documents/projects/web/obligacje/backend/src/main/java/com/neumann/example/obligacje_backend/service/BondsService.java

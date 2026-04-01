@@ -52,7 +52,7 @@ export const Hero = () => {
               Otwórz kalkulator <ArrowRight size={18} strokeWidth={2.5} />
             </motion.button>
           </a>
-          <a href="/poradnik" className="w-full sm:w-auto no-underline">
+          <a href="/faq" className="w-full sm:w-auto no-underline">
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

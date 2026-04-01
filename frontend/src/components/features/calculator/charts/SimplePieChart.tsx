@@ -4,14 +4,14 @@ import React from 'react';
 import { PieChart, ArrowUpRight } from 'lucide-react';
 
 interface SimplePieChartProps {
-  capital: number;
+  amount: number; // <-- ZMIANA: amount zamiast capital
   profit: number;
   formatPLN: (v: number) => string;
 }
 
-export const SimplePieChart = ({ capital, profit, formatPLN }: SimplePieChartProps) => {
-  const total = capital + profit;
-  const capitalPercent = total > 0 ? capital / total : 1;
+export const SimplePieChart = ({ amount, profit, formatPLN }: SimplePieChartProps) => {
+  const total = amount + profit;
+  const capitalPercent = total > 0 ? amount / total : 1;
   
   const angle = 2 * Math.PI * capitalPercent;
   const x = Math.cos(angle);
@@ -28,7 +28,7 @@ export const SimplePieChart = ({ capital, profit, formatPLN }: SimplePieChartPro
                 <div className="w-3 h-3 rounded-full bg-[#0071E3] shadow-sm ring-2 ring-blue-50"></div>
                 <span className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Wkład własny</span>
             </div>
-            <p className="text-xl font-black text-gray-900 tracking-tight pl-5">{formatPLN(capital)}</p>
+            <p className="text-xl font-black text-gray-900 tracking-tight pl-5">{formatPLN(amount)}</p>
          </div>
          
          <div>
@@ -41,7 +41,7 @@ export const SimplePieChart = ({ capital, profit, formatPLN }: SimplePieChartPro
 
          <div className="pt-4 border-t border-black-100 mt-2">
             <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest block mb-1">Rentowność (ROI)</span>
-            <div className="items-center gap-1 text-red-500 pl-5">
+            <div className="items-center gap-1 text-[#10B981] pl-5">
                 <span className="text-2xl font-black tracking-tighter">
                     {((profit/total)*100).toFixed(1)}%
                 </span>

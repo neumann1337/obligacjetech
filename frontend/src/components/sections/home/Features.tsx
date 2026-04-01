@@ -28,7 +28,7 @@ export const Features = () => {
           title="Analiza Rynku"
           desc="Aktualne ceny, prognozy inflacji i zmiany w ofertach. Bądź na bieżąco z tym, co dzieje się z pieniądzem."
           icon={<MessageCircle size={24} className="text-purple-600" />}
-          href="/wiadomosci"
+          href="/rynek"
           delay={0.3}
         />
       </div>
