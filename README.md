@@ -117,4 +117,4 @@ Built as a portfolio project to demonstrate:
 ## Author
 
 **Bartłomiej Neumann**  
-[GitHub](https://github.com/bartlomiejneumann) · [LinkedIn](https://linkedin.com/in/bartlomiejneumann)
+[LinkedIn](https://www.linkedin.com/in/bartłomiej-neumann-b8ab9a371/)
