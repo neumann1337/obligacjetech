@@ -1,105 +1,121 @@
-### Obligacje.tech – Polish Treasury Bonds Calculator
+# Obligacje.tech — Polish Treasury Bonds Calculator
 
-![](Images/1.png)
+![Preview](Images/1.png)
 
-A full-stack web application designed to simulate and analyze profits from Polish Treasury Bonds (OTS, DOS, TOZ, COI, EDO). The tool provides precise net profit calculations, accounting for compound interest (capitalization), capital gains tax (Belka tax), and inflation indexing.
+A full-stack web application for simulating and analyzing profits from Polish Treasury Bonds (OTS, DOS, TOZ, COI, EDO). Provides precise net profit calculations with compound interest, capital gains tax (Belka tax), and inflation indexing applied.
 
-# Key Features
+[![Next.js](https://img.shields.io/badge/Next.js-16.1-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.2-6DB33F?logo=springboot)](https://spring.io/projects/spring-boot)
+[![Java](https://img.shields.io/badge/Java-17-orange?logo=openjdk)](https://openjdk.org/)
 
-Advanced Profit Calculator: Simulates daily, monthly, and yearly returns using compound interest logic.
+---
 
-![](Images/3.png)
+## Features
 
-Data Visualization: Custom SVG charts implementation (Linear Growth & ROI Pie Chart) without external chart libraries.
+### Profit Calculator
 
-![](Images/4.png)
-![](Images/5.png)
+Simulates daily, monthly, and yearly returns using compound interest logic. Accounts for capitalization periods specific to each bond type.
 
-Market Data Integration: Real-time data integration with NBP API (FX rates, gold prices).
+![Calculator](Images/3.png)
 
-![](Images/9.png)
+### Data Visualization
 
-Educational Hub: Interactive knowledge base regarding bond types and investment strategies.
+Custom SVG chart implementation — linear growth chart and ROI pie chart — built without external chart libraries.
 
-![](Images/6.png)
-![](Images/7.png)
+![Chart](Images/4.png)
+![Pie](Images/5.png)
 
-Security: Backend implementation of rate limiting (Bucket4j) and strict input validation.
+### Market Data Integration
 
-# Tech Stack
+Real-time data from the NBP API, including FX rates and gold prices.
 
-Frontend
+![NBP](Images/9.png)
 
-Next.js 16.1.2 (App Router)
+### Educational Hub
 
-TypeScript
+Interactive knowledge base covering bond types, taxation, and investment strategies.
 
-Tailwind CSS
+![Education](Images/6.png)
+![Education](Images/7.png)
 
-Lucide React
+### Security
 
-Custom SVG Charts (zero-dependency implementation)
+Rate limiting via Bucket4j (token-bucket algorithm) and strict input validation on all calculation endpoints.
 
-Backend
+---
 
-Java Spring Boot 3.2
+## Tech Stack
 
-Maven
+**Frontend**
 
-Bucket4j (Rate Limiting)
+- Next.js 16.1.2 (App Router)
+- TypeScript
+- Tailwind CSS
+- Lucide React
+- Custom SVG Charts — zero external dependencies
 
-Spring Validation
+**Backend**
 
-JSON-based storage
+- Java Spring Boot 3.2
+- Maven
+- Bucket4j — rate limiting
+- Spring Validation
+- JSON-based storage
 
-# How to Run Locally
+---
 
-Prerequisites: Node.js 18+, JDK 17+, Maven.
+## Architecture
 
-1. Start Backend (Java)
+REST API with full decoupling between backend and presentation layer.
 
+| Concern          | Implementation                                    |
+| ---------------- | ------------------------------------------------- |
+| API Design       | RESTful, versioned endpoints                      |
+| Rate Limiting    | Token-bucket algorithm (Bucket4j)                 |
+| CORS             | Configured for local and production environments  |
+| Input Validation | Spring Validation with unified error responses    |
+| Error Handling   | Consistent JSON error schema across all endpoints |
+
+---
+
+## Running Locally
+
+**Prerequisites:** Node.js 18+, JDK 17+, Maven
+
+**1. Backend**
+
+```bash
 cd backend
 mvn clean spring-boot:run
+# Runs on http://localhost:8080
+```
 
-The server will start on port 8080.
+**2. Frontend**
 
-2. Start Frontend (Next.js)
-
+```bash
 cd frontend
-
-Create local environment file
-
 echo "NEXT_PUBLIC_BACKEND_URL=http://localhost:8080/api" > .env.local
-
 npm install
 npm run dev
+# Runs on http://localhost:3000
+```
 
-The application will be available at http://localhost:3000.
+---
 
-# Security & Architecture
+## Purpose
 
-The project follows a REST API architecture with separation of concerns.
+Built as a portfolio project to demonstrate:
 
-Decoupling: Backend is completely separated from the presentation layer.
+- Full-stack application design with separated concerns
+- Financial domain logic (compound interest, tax calculations, inflation indexing)
+- Backend security practices (rate limiting, input validation)
+- REST API design
+- Frontend data visualization without third-party chart libraries
 
-CORS: Configured for secure local and production communication.
+---
 
-Rate Limiting: Protects calculation endpoints from abuse using a token-bucket algorithm.
+## Author
 
-Error Handling: Unified JSON error responses provided to the frontend.
-
-# Purpose
-
-This project was created as a portfolio and educational full-stack application to demonstrate:
-
-Backend security best practices
-
-REST API design
-
-Complex financial calculation logic
-
-Frontend data visualization techniques
-
-# Author
-
-Bartłomiej Neumann
+**Bartłomiej Neumann**  
+[GitHub](https://github.com/bartlomiejneumann) · [LinkedIn](https://linkedin.com/in/bartlomiejneumann)

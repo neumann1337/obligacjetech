@@ -39,7 +39,7 @@ export const Hero = () => {
           Bezpieczna przystań dla Twoich oszczędności. <br className="hidden md:inline"/>
           Symuluj zyski z matematyczną precyzją,{' '}
           <span className="text-gray-900 font-bold border-b-2 border-teal-500/30 pb-0.5 inline-block mt-1 sm:mt-0">
-            chroń kapitał przed inflacją i buduj majątek na własnych zasadach.
+            chroń kapitał przed inflacją.
           </span>
         </p>
         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center w-full max-w-sm sm:max-w-none mx-auto">
