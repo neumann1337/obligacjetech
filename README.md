@@ -17,27 +17,26 @@ A full-stack web application for simulating and analyzing profits from Polish Tr
 
 Simulates daily, monthly, and yearly returns using compound interest logic. Accounts for capitalization periods specific to each bond type.
 
-![Calculator](Images/3.png)
+![Calculator](Images/2.png)
 
 ### Data Visualization
 
 Custom SVG chart implementation — linear growth chart and ROI pie chart — built without external chart libraries.
 
-![Chart](Images/4.png)
-![Pie](Images/5.png)
+![Chart](Images/3.png)
 
 ### Market Data Integration
 
 Real-time data from the NBP API, including FX rates and gold prices.
 
-![NBP](Images/9.png)
+![NBP](Images/4.png)
+![NBP](Images/6.png)
 
 ### Educational Hub
 
 Interactive knowledge base covering bond types, taxation, and investment strategies.
 
-![Education](Images/6.png)
-![Education](Images/7.png)
+![Education](Images/5.png)
 
 ### Security
 
