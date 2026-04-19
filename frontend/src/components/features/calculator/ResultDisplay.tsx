@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState } from 'react';
 import { PieChart } from 'lucide-react';
 import { CalculationResult } from '@/types/calculator';

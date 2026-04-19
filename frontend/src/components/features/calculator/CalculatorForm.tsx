@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import { Wallet, PieChart, Percent, Calendar, Loader2, AlertCircle } from 'lucide-react';
 import { Bond } from '@/types/calculator';

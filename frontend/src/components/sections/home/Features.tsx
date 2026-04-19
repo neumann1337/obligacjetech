@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import { Calculator, BookOpen, MessageCircle } from 'lucide-react';
 import { FeatureCard } from '@/components/ui/FeatureCard';

@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useEffect } from 'react';
 import { 
   HelpCircle, 
@@ -82,7 +80,6 @@ export const CurrencyTile = ({
           </div>
         ) : (
           <div className="flex items-baseline gap-1 text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
-            {/* Specjalny warunek dla JPY, które jest tanie i ma więcej miejsc po przecinku */}
             <span className="text-3xl font-black tracking-tighter tabular-nums">
               {code.toLowerCase() === 'jpy' 
                 ? rate?.toFixed(4).replace('.', ',') 
@@ -99,14 +96,9 @@ export const CurrencyTile = ({
   );
 };
 
-// ============================================================================
-// GŁÓWNA SEKCJA GRID (Zmieniono nazwę na CurrencyWidget)
-// Dzięki temu Twój obecny import w page.tsx wyrenderuje całą siatkę!
-// ============================================================================
 export const CurrencyWidget = () => {
   return (
     <section className="w-full">
-      {/* NAGŁÓWEK SEKCJI */}
       <div className="flex items-center gap-3 mb-6">
         <div className="p-2.5 bg-gray-100 rounded-xl shadow-sm border border-gray-200 text-gray-900">
           <Coins size={20} strokeWidth={2.5} />
@@ -120,12 +112,6 @@ export const CurrencyWidget = () => {
           </p>
         </div>
       </div>
-
-      {/* GRID Z KAFELKAMI WALUT 
-        - grid-cols-1: domyślnie na bardzo małych ekranach
-        - sm:grid-cols-2: na większych telefonach 2 kolumny (3 rzędy)
-        - md:grid-cols-3: na tablecie i desktopie 3 kolumny (2 rzędy)
-      */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 w-full">
         <CurrencyTile code="eur" icon={Euro} color="text-blue-600" />
         <CurrencyTile code="usd" icon={DollarSign} color="text-emerald-600" />

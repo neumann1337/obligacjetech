@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useEffect } from 'react';
 import { Coins, Layers, Gem, TrendingUp } from 'lucide-react';
 

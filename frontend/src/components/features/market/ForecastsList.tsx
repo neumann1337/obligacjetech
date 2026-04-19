@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import { Calendar, ArrowUpRight } from 'lucide-react';
 import { FORECASTS_DATA } from '@/data/market-forecasts';

@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import { TrendingUp, ArrowLeft } from 'lucide-react';
 import { CalculatorForm } from '@/components/features/calculator/CalculatorForm';

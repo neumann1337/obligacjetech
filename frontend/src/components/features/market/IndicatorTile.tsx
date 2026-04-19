@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import { TrendingUp, Percent, HelpCircle } from 'lucide-react';
 

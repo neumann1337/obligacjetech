@@ -1,10 +1,7 @@
-"use client";
-
 import React, { useState, useEffect } from 'react';
 import { TrendingUp, Clock, ShieldCheck, AlertCircle, RefreshCw, ChevronDown, ChevronUp } from 'lucide-react';
 import { PieChart } from 'lucide-react';
 
-// 1. ZAKTUALIZOWANY INTERFEJS (zgodny z Bonds.json)
 interface RawBondFromApi {
     symbol: string;
     name: string;
@@ -25,9 +22,7 @@ interface BondDisplay {
     features: string[];
 }
 
-// 2. ZAKTUALIZOWANA FUNKCJA MAPUJĄCA
 const transformBondData = (raw: RawBondFromApi): BondDisplay => {
-    // Używamy nowych, angielskich kluczy z Twojego JSON-a
     const { symbol, name: apiName, firstYearInterestRate, periodYears } = raw;
     const prefix = symbol.substring(0, 3);
 
@@ -37,7 +32,6 @@ const transformBondData = (raw: RawBondFromApi): BondDisplay => {
     let desc = "";
     let features: string[] = [];
     
-    // Zabezpieczenie na wypadek, gdyby wartość z backendu była null/undefined
     const rate = firstYearInterestRate || 0;
     const interestStr = `${rate.toFixed(2).replace('.', ',')}%`;
 
