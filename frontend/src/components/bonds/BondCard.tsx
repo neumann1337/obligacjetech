@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { TrendingUp, Clock, ShieldCheck, AlertCircle, RefreshCw, ChevronDown, ChevronUp } from 'lucide-react';
 import { PieChart } from 'lucide-react';

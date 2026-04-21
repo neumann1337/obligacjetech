@@ -1,3 +1,4 @@
+"use client"
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { TrendingUp, Calculator, BookOpen, Home, Landmark, Newspaper } from 'lucide-react';

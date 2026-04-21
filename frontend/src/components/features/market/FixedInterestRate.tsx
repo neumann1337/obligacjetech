@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect } from 'react';
 import { Activity } from 'lucide-react';
 import { IndicatorTile } from '@/components/features/market/IndicatorTile';
