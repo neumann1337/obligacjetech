@@ -165,7 +165,7 @@ export default function BondDetails() {
                 </a>
                 <span className="text-xs font-medium px-3 py-1 bg-green-100 text-green-700 rounded-full flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    Dane z API Live
+                    stan oferty na marzec 2026
                 </span>
                 </div>
             </nav>
@@ -177,7 +177,7 @@ export default function BondDetails() {
                     Aktualna Oferta <br /> Skarbu Państwa
                 </h1>
                 <p className="text-lg text-gray-500 leading-relaxed">
-                    Poniższe dane pobierane są z API.
+                    Poniższe dane pobierane są z API pliku .json.
                     Wybierz instrument dopasowany do Twoich celów.
                 </p>
                 </header>

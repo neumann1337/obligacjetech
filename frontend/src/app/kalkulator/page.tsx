@@ -37,6 +37,9 @@ export default function KalkulatorPage() {
       <div className="max-w-[800px] mx-auto my-10 px-5">
         <div className="text-center mb-10">
           <h1 className="text-[2.5rem] font-bold tracking-tight mb-2">Symulacja zysków</h1>
+          <span className="text-xs text-gray-400 font-normal mt-2 inline-block">
+            * Oferta przedstawia stan na marzec 2026
+          </span>
         </div>
 
         <div className="bg-white p-8 md:p-10 rounded-[30px] shadow-sm">

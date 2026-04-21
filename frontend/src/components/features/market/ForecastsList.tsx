@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, ArrowUpRight } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import { FORECASTS_DATA } from '@/data/market-forecasts';
 
 export const ForecastsList = () => {
@@ -15,12 +15,12 @@ export const ForecastsList = () => {
               Analiza Rynku
             </h2>
             <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-1.5">
-              Prognozy: Styczeń 2026
+              Prognozy: marzec 2026
             </p>
           </div>
         </div>
         <span className="hidden md:block text-[10px] text-gray-400 font-black uppercase tracking-[0.2em]">
-          Aktualizacja: Grudzień 2025
+          Aktualizacja: marzec 2026
         </span>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 w-full">
@@ -49,14 +49,9 @@ export const ForecastsList = () => {
               {item.title}
             </h3>
 
-            <p className="text-sm text-gray-500 leading-relaxed font-medium flex-grow mb-8 relative z-10">
+            <p className="text-sm text-gray-500 leading-relaxed font-medium flex-grow relative z-10">
               {item.content}
             </p>
-            <div className="pt-5 border-t border-gray-50 mt-auto relative z-10">
-              <div className="flex items-center justify-between text-blue-600 font-black text-[10px] md:text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
-                  Czytaj szczegóły <ArrowUpRight size={16} strokeWidth={3} />
-              </div>
-            </div>
           </div>
         ))}
       </div>

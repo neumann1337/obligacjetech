@@ -13,7 +13,9 @@ export const Footer = () => {
             </span>
           </div>
           <p className="text-[10px] leading-relaxed text-gray-500 uppercase tracking-widest font-medium opacity-80">
-            Przedstawione dane mają charakter wyłącznie informacyjny i symulacyjny. Wyniki historyczne nie gwarantują osiągnięcia podobnych zysków w przyszłości. Nie stanowi to porady inwestycyjnej.
+            Przedstawione dane mają charakter wyłącznie informacyjny i symulacyjny.
+            Wyniki historyczne nie gwarantują osiągnięcia podobnych zysków w przyszłości. Nie stanowi to porady inwestycyjnej.
+            Obligacje sa pobierane z pliku .json, z oferty na marzec 2026
           </p>
         </div>
         <div className="text-center md:text-right shrink-0">

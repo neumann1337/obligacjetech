@@ -40,6 +40,9 @@ export const Hero = () => {
           <span className="text-gray-900 font-bold border-b-2 border-teal-500/30 pb-0.5 inline-block mt-1 sm:mt-0">
             chroń kapitał przed inflacją.
           </span>
+          <span className="text-xs text-gray-400 font-normal mt-2 inline-block">
+            * Oferta przedstawia stan na marzec 2026
+          </span>
         </p>
         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center w-full max-w-sm sm:max-w-none mx-auto">
           <a href="/kalkulator" className="w-full sm:w-auto no-underline">
